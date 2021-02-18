@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IQueryable<Book>
+
+<style>
+    tr {
+        border: 2px solid blue;
+    }
+
+    th {
+        font-weight: 600;
+        border: 2px solid blue;
+        padding-left: 2px;
+    }
+
+    td {
+        padding: 5px 30px 5px 3px;
+    }
+
+    table {
+        border: 2px solid blue;
+        background-color: whitesmoke;
+    }
+
+    h1 {
+        padding-bottom: 30px;
+        color: whitesmoke;
+    }
+</style>
+
+<div>
+    <h1>Favorite Books</h1>
+
+    <table class="table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>ISBN</th>
+            <th>Classification/Category</th>
+            <th>Price</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+    <tr>
+        <td>@x.title</td>
+        <td>@x.author</td>
+        <td>@x.publisher</td>
+        <td>@x.isbn</td>
+        <td>@x.category</td>
+        <td>@x.price</td>
+    </tr>
+        }
+    </table>
+</div>
