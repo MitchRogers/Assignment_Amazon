@@ -8,6 +8,7 @@ namespace Assignment_Amazon.Models
 {
     public class AssignmentAmazonDBContext : DbContext
     {
+        // constructor
         public AssignmentAmazonDBContext (DbContextOptions<AssignmentAmazonDBContext> options) : base (options)
         {
 

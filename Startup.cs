@@ -29,6 +29,7 @@ namespace Assignment_Amazon
 
             services.AddDbContext<AssignmentAmazonDBContext>(options =>
             {
+                // make sure to not add space -- reads as null
                 options.UseSqlServer(Configuration["ConnectionStrings:AssignmentAmazonConnection"]);
             });
 
@@ -62,6 +63,7 @@ namespace Assignment_Amazon
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            // run the method from SeedBooks class
             SeedBooks.EnsurePopulated(app);
         }
     }

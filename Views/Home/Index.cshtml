@@ -3,6 +3,7 @@
 }
 @model IQueryable<Book>
 
+<!-- styling -->
 <style>
     tr {
         border: 2px solid blue;
@@ -32,6 +33,7 @@
 <div>
     <h1>Favorite Books</h1>
 
+    <!-- table to hold the favorite books from SeedBook.cs -->
     <table class="table-hover">
         <tr>
             <th>Title</th>
@@ -41,6 +43,7 @@
             <th>Classification/Category</th>
             <th>Price</th>
         </tr>
+        <!-- for loop to loop through each book object to access its info -->
         @foreach (var x in Model)
         {
     <tr>
@@ -54,5 +57,6 @@
         }
     </table>
     <br /><br />
+    <!-- display ISBN validation message -->
     <div asp-validation-summary="All"></div>
 </div>

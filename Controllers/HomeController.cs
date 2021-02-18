@@ -23,6 +23,7 @@ namespace Assignment_Amazon.Controllers
 
         public IActionResult Index()
         {
+            // pass the repos books to the view to display
             return View(_repository.books);
         }
 

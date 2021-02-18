@@ -15,15 +15,19 @@ namespace Assignment_Amazon.Models
             AssignmentAmazonDBContext context = application.ApplicationServices.
             CreateScope().ServiceProvider.GetRequiredService<AssignmentAmazonDBContext>();
 
+            // if there is pending info/migrations for db
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
-
+            
+            // if there are no books in the db 
             if (!context.books.Any())
             {
                 context.books.AddRange(
 
+                    // add new books from prof Hilton's list
+                    // bookId will be auto generated
                     new Book
                     {
                         title = "Les Miserables",
