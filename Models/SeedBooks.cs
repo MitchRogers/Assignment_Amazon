@@ -30,102 +30,171 @@ namespace Assignment_Amazon.Models
                     // bookId will be auto generated
                     new Book
                     {
-                        title = "Les Miserables",
-                        author = "Victor Hugo",
-                        publisher = "Signet",
-                        isbn = "978-0451419439",
-                        category = "Fiction, Classic",
-                        price = 9.95F
+                        Title = "Les Miserables",
+                        AuthorFirst = "Victor",
+                        AuthorLast = "Hugo",
+                        Publisher = "Signet",
+                        Isbn = "978-0451419439",
+                        Category1 = "Fiction",
+                        Category2 = "Classic",
+                        Price = 9.95F,
+                        NumPages = 1488
                     },
 
                     new Book
                     {
-                        title = "Team of Rivals",
-                        author = "Doris Kearns Goodwin",
-                        publisher = "Simon & Schuster",
-                        isbn = "978-0743270755",
-                        category = "Non-Fiction, Biography",
-                        price = 14.58F
+                        Title = "Team of Rivals",
+                        AuthorFirst = "Doris Kearns",
+                        AuthorLast = "Goodwin",
+                        Publisher = "Simon & Schuster",
+                        Isbn = "978-0743270755",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Biography",
+                        Price = 14.58F,
+                        NumPages = 944
                     },
 
                     new Book
                     {
-                        title = "The Snowball",
-                        author = "Alice Schroeder",
-                        publisher = "Bantam",
-                        isbn = "978-0553384611",
-                        category = "Non-Fiction, Biography",
-                        price = 21.54F
+                        Title = "The Snowball",
+                        AuthorFirst = "Alice",
+                        AuthorLast = "Schroeder",
+                        Publisher = "Bantam",
+                        Isbn = "978-0553384611",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Biography",
+                        Price = 21.54F,
+                        NumPages = 832
                     },
 
                     new Book
                     {
-                        title = "American Ulysses",
-                        author = "Ronald C. White",
-                        publisher = "Random House",
-                        isbn = "978-0812981254",
-                        category = "Non-Fiction, Biography",
-                        price = 11.61F
+                        Title = "American Ulysses",
+                        AuthorFirst = "Ronald C.",
+                        AuthorLast = "White",
+                        Publisher = "Random House",
+                        Isbn = "978-0812981254",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Biography",
+                        Price = 11.61F,
+                        NumPages = 864
                     },
 
                     new Book
                     {
-                        title = "Unbroken",
-                        author = "Laura Hillenbrand",
-                        publisher = "Random House",
-                        isbn = "978-0812974492",
-                        category = "Non-Fiction, Historical",
-                        price = 13.33F
+                        Title = "Unbroken",
+                        AuthorFirst = "Laura",
+                        AuthorLast = "Hillenbrand",
+                        Publisher = "Random House",
+                        Isbn = "978-0812974492",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Historical",
+                        Price = 13.33F,
+                        NumPages = 528
                     },
 
                     new Book
                     {
-                        title = "The Great Train Robbery",
-                        author = "Michael Crichton",
-                        publisher = "Vintage",
-                        isbn = "978-0804171281",
-                        category = "Fiction, Historical-Fiction",
-                        price = 15.95F
+                        Title = "The Great Train Robbery",
+                        AuthorFirst = "Michael",
+                        AuthorLast = "Crichton",
+                        Publisher = "Vintage",
+                        Isbn = "978-0804171281",
+                        Category1 = "Fiction",
+                        Category2 = "Historical-Fiction",
+                        Price = 15.95F,
+                        NumPages = 288
                     },
 
                     new Book
                     {
-                        title = "Deep Work",
-                        author = "Cal Newport",
-                        publisher = "Grand Central Publishing",
-                        isbn = "978-1455586691",
-                        category = "Non-Fiction, Self-Help",
-                        price = 14.99F
+                        Title = "Deep Work",
+                        AuthorFirst = "Cal",
+                        AuthorLast = "Newport",
+                        Publisher = "Grand Central Publishing",
+                        Isbn = "978-1455586691",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Self-Help",
+                        Price = 14.99F,
+                        NumPages = 304
                     },
 
                     new Book
                     {
-                        title = "It's Your Ship",
-                        author = "Michael Abrashoff",
-                        publisher = "Grand Central Publishing",
-                        isbn = "978-1455523023",
-                        category = "Non-Fiction, Self-Help",
-                        price = 21.66F
+                        Title = "It's Your Ship",
+                        AuthorFirst = "Michael",
+                        AuthorLast = "Abrashoff",
+                        Publisher = "Grand Central Publishing",
+                        Isbn = "978-1455523023",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Self-Help",
+                        Price = 21.66F,
+                        NumPages = 240
                     },
 
                     new Book
                     {
-                        title = "The Virgin Way",
-                        author = "Richard Branson",
-                        publisher = "Portfolio",
-                        isbn = "978-1591847984",
-                        category = "Non-Fiction, Business",
-                        price = 29.16F
+                        Title = "The Virgin Way",
+                        AuthorFirst = "Richard",
+                        AuthorLast = "Branson",
+                        Publisher = "Portfolio",
+                        Isbn = "978-1591847984",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Business",
+                        Price = 29.16F,
+                        NumPages = 400
                     },
 
                     new Book
                     {
-                        title = "Sycamore Row",
-                        author = "John Grisham",
-                        publisher = "Bantam",
-                        isbn = "978-0553393613",
-                        category = "Fiction, Thrillers",
-                        price = 15.03F
+                        Title = "Sycamore Row",
+                        AuthorFirst = "John",
+                        AuthorLast = "Grisham",
+                        Publisher = "Bantam",
+                        Isbn = "978-0553393613",
+                        Category1 = "Fiction",
+                        Category2 = "Thrillers", 
+                        Price = 15.03F,
+                        NumPages = 642
+                    },
+
+                    new Book
+                    {
+                        Title = "Shoe Dog",
+                        AuthorFirst = "Phil",
+                        AuthorLast = "Knight",
+                        Publisher = "Simon & Schuster",
+                        Isbn = "978-1508211808",
+                        Category1 = "Non-Fiction",
+                        Category2 = "Sports",
+                        Price = 10.89F,
+                        NumPages = 422
+                    },
+
+                    new Book
+                    {
+                        Title = "The Millionaire Next Door",
+                        AuthorFirst = "Thomas J.",
+                        AuthorLast = "Stanley",
+                        Publisher = "Simon & Schuster",
+                        Isbn = "978-0743517843",
+                        Category1 = "Financial",
+                        Category2 = "Self-Help",
+                        Price = 8.89F,
+                        NumPages = 272
+                    },
+
+                    new Book
+                    {
+                        Title = "Principles",
+                        AuthorFirst = "Ray",
+                        AuthorLast = "Dalio",
+                        Publisher = "Simon & Schuster",
+                        Isbn = "978-1508243243",
+                        Category1 = "Financial Investing",
+                        Category2 = "Business",
+                        Price = 15.03F,
+                        NumPages = 642
                     }
                 );
 

@@ -3,14 +3,16 @@ using Assignment_Amazon.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Assignment_Amazon.Migrations
 {
     [DbContext(typeof(AssignmentAmazonDBContext))]
-    partial class AssignmentAmazonDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210224224411_normalization2")]
+    partial class normalization2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,6 +40,7 @@ namespace Assignment_Amazon.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Category2")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Isbn")

@@ -1,62 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IQueryable<Book>
+@model BookListViewModel
 
 <!-- styling -->
 <style>
-    tr {
-        border: 2px solid blue;
-    }
-
-    th {
-        font-weight: 600;
-        border: 2px solid blue;
-        padding-left: 2px;
-    }
-
-    td {
-        padding: 5px 30px 5px 3px;
-    }
-
-    table {
-        border: 2px solid blue;
-        background-color: whitesmoke;
-    }
-
     h1 {
         padding-bottom: 30px;
         color: whitesmoke;
     }
+
+    h2 {
+        font-weight: 800;
+    }
+
+    h3 {
+        font-style: italic;
+    }
+
+    .indBook {
+        width: 600px;
+        padding: 20px;
+        margin: 20px;
+        background-color: whitesmoke;
+    }
 </style>
+<!-- for loop to loop through each book object to access its info -->
+@foreach (var x in Model.Books)
+{
+    <div class="indBook border-outset">
+        <h2>@x.Title</h2>
+        <h3>@(x.AuthorFirst + " " + x.AuthorLast)</h3>
+        <h5>@("Genre: " + x.Category1 + ", " + x.Category2)</h5>
+        <h5>@(x.Publisher + " --- " + x.Isbn)</h5>
+        <h5 class="text-danger">@x.Price</h5>
+        <h5>Pages: <span class="label label-primary">999</span></h5>
+    </div>
+}
+<br /><br />
+<!-- display ISBN validation message -->
+<div asp-validation-summary="All"></div>
 
-<div>
-    <h1>Favorite Books</h1>
+<div page-model="@Model.PagingInfo" page-action="Index" class="pagination pagination-primary">
 
-    <!-- table to hold the favorite books from SeedBook.cs -->
-    <table class="table-hover">
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publisher</th>
-            <th>ISBN</th>
-            <th>Classification/Category</th>
-            <th>Price</th>
-        </tr>
-        <!-- for loop to loop through each book object to access its info -->
-        @foreach (var x in Model)
-        {
-    <tr>
-        <td>@x.title</td>
-        <td>@x.author</td>
-        <td>@x.publisher</td>
-        <td>@x.isbn</td>
-        <td>@x.category</td>
-        <td>@x.price</td>
-    </tr>
-        }
-    </table>
-    <br /><br />
-    <!-- display ISBN validation message -->
-    <div asp-validation-summary="All"></div>
 </div>

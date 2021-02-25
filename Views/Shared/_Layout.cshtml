@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body style="padding: 50px; background-image: linear-gradient(to bottom right, dodgerblue, blue, navy, midnightblue)">
-    
-    @RenderBody()
+<body style="padding: 50px; background-image: linear-gradient(to bottom right, rgb(80, 80, 80), rgb(40,40,40), rgb(0,0,0));">
+
+<div class="bg-dark text-white">
+    <span class="navbar-brand ml-5">AMAZON BOOKS</span>
+</div>
+<div class="row m-1 p-1">
+    <div class="col-4">
+        <h1>Favorite Books</h1>
+    </div>
+    <div class="col-8">
+        @RenderBody()
+    </div>
+</div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

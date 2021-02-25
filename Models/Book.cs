@@ -9,21 +9,26 @@ namespace Assignment_Amazon.Models
     //Book object to store book info -- PK auto set to bookId
     public class Book
     {
-        [Key]        
-        public int bookId { get; set; }
+        [Key]
+        public int BookId { get; set; }
         [Required]
-        public string title { get; set; }
+        public string Title { get; set; }
         [Required]
-        public string author { get; set; }
+        public string AuthorFirst { get; set; }
         [Required]
-        public string publisher { get; set; }
+        public string AuthorLast { get; set; }
+        [Required]
+        public string Publisher { get; set; }
         // regex to validate the correct isbn format
         [Required(ErrorMessage = "You must enter a valid ISBN number. XXX-XXXXXXXXXX")]
         [RegularExpression(@"([0-9]{3})[-]([0-9]{10}$")]
-        public string isbn { get; set; }
+        public string Isbn { get; set; }
         [Required]
-        public string category { get; set; }
+        public string Category1 { get; set; }
+        public string? Category2 { get; set; }
         [Required]
-        public float price { get; set; }
+        public float Price { get; set; }
+        [Required]
+        public int NumPages { get; set; }
     }
 }
