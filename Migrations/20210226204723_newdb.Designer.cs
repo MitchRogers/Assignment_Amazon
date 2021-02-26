@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment_Amazon.Migrations
 {
     [DbContext(typeof(AssignmentAmazonDBContext))]
-    [Migration("20210224222207_normalization")]
-    partial class normalization
+    [Migration("20210226204723_newdb")]
+    partial class newdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,7 +40,6 @@ namespace Assignment_Amazon.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Category2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Isbn")

@@ -24,23 +24,27 @@
         margin: 20px;
         background-color: whitesmoke;
     }
+
+    .bookborder {
+        border: 2px outset black;
+    }
 </style>
 <!-- for loop to loop through each book object to access its info -->
 @foreach (var x in Model.Books)
 {
-    <div class="indBook border-outset">
+    <div class="indBook bookborder rounded-right rounded-lg">
         <h2>@x.Title</h2>
         <h3>@(x.AuthorFirst + " " + x.AuthorLast)</h3>
         <h5>@("Genre: " + x.Category1 + ", " + x.Category2)</h5>
         <h5>@(x.Publisher + " --- " + x.Isbn)</h5>
-        <h5 class="text-danger">@x.Price</h5>
-        <h5>Pages: <span class="label label-primary">999</span></h5>
+        <h5 class="text-danger">$@x.Price</h5>
+        <h5>Pages: <span class="badge badge-pill badge-danger">@x.NumPages</span></h5>
     </div>
 }
 <br /><br />
 <!-- display ISBN validation message -->
 <div asp-validation-summary="All"></div>
 
-<div page-model="@Model.PagingInfo" page-action="Index" class="pagination pagination-primary">
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-danger" class="btn-group pull-right m-1 shadow-sm">
 
 </div>
