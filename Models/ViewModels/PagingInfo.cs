@@ -11,5 +11,6 @@ namespace Assignment_Amazon.Models.ViewModels
         public int BooksPerPage { get; set; }
         public int CurrentPage { get; set; }
         public int TotalPages => (int)(Math.Ceiling((decimal)TotalNumBooks / BooksPerPage));
+
     }
 }

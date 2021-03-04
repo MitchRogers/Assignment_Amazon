@@ -24,21 +24,25 @@ namespace Assignment_Amazon.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             // pass the repos books to the view to display
             return View(new BookListViewModel
             {
                 Books = _repository.books
+                    .Where(b => category == null || (b.Category1 == category || b.Category2 == category))
                     .OrderBy(b => b.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize)
-                , PagingInfo = new PagingInfo
+                ,
+                // 
+                PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     BooksPerPage = PageSize,
-                    TotalNumBooks = _repository.books.Count()
-                }
+                    TotalNumBooks = category == null ? _repository.books.Count() : _repository.books.Where(b => b.Category1 == category).Count()
+                },
+                CurrentCategory = category
             });
         }
 
