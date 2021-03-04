@@ -3,10 +3,13 @@
 *@
 @model IEnumerable<string>
 
+<!-- home button to display all seed data with no filters -->
 <a class="btn btn-block btn-outline-secondary" asp-action="Index" asp-controller="Home"
    asp-route-category="">
     Home
 </a>
+
+<!-- nav menu displayed with highlighting and hovering effects -->
 
 @foreach (string category in Model)
 {
