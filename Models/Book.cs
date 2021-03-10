@@ -30,5 +30,6 @@ namespace Assignment_Amazon.Models
         public float Price { get; set; }
         [Required]
         public int NumPages { get; set; }
+
     }
 }

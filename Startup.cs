@@ -30,10 +30,16 @@ namespace Assignment_Amazon
             services.AddDbContext<AssignmentAmazonDBContext>(options =>
             {
                 // make sure to not add space -- reads as null
-                options.UseSqlServer(Configuration["ConnectionStrings:AssignmentAmazonConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:AssignmentAmazonConnection"]);
             });
 
             services.AddScoped<AssignmentAmazonRepository, EFAssignmentAmazonRepository>();
+
+            services.AddRazorPages();
+
+            // makes the info stick in cart
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +57,8 @@ namespace Assignment_Amazon
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
@@ -75,6 +83,8 @@ namespace Assignment_Amazon
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
             // run the method from SeedBooks class
