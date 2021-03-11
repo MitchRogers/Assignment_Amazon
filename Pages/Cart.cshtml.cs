@@ -12,9 +12,10 @@ namespace Assignment_Amazon.Pages
     public class CartModel : PageModel
     {
         private AssignmentAmazonRepository repository;
-        public CartModel(AssignmentAmazonRepository repo)
+        public CartModel(AssignmentAmazonRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
         public Cart Cart { get; set; }
@@ -29,7 +30,7 @@ namespace Assignment_Amazon.Pages
         {
             Book book = repository.books.FirstOrDefault(b => b.BookId == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            // Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddBook(book, 1);
 

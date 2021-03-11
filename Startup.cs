@@ -42,7 +42,7 @@ namespace Assignment_Amazon
             services.AddDistributedMemoryCache();
             services.AddSession();
 
-            services.AddScoped<Cart>(s => Cart.GetCart(s));
+            services.AddScoped<Cart>(s => SessionCart.GetCart(s));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 

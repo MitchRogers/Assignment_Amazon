@@ -12,20 +12,9 @@ namespace Assignment_Amazon.Models
     public class Cart
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
+        public ISession Session { get; internal set; }
 
-        public static Cart GetCart(IServiceProvider services)
-        {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
-            .HttpContext.Session;
-            Cart cart = session?.GetJson<Cart>("Cart")
-            ?? new Cart();
-            cart.Session = session;
-            return cart;
-        }
-
-        [JsonIgnore]
-        public ISession Session { get; set; }
-        public void AddBook(Book book, int quantity)
+        public virtual void AddBook(Book book, int quantity)
         {
             CartLine line = Lines
                             .Where(b => b.Book.BookId == book.BookId)
@@ -45,10 +34,10 @@ namespace Assignment_Amazon.Models
             }
         }
 
-        public void RemoveBook(Book book) =>
+        public virtual void RemoveBook(Book book) =>
             Lines.RemoveAll(b => b.Book.BookId == book.BookId);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public decimal ComputeCartBalance() => 
             (decimal)Lines.Sum(s => s.Book.Price * s.Quantity);
