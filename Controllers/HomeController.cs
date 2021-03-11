@@ -35,7 +35,6 @@ namespace Assignment_Amazon.Controllers
                     .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize)
                 ,
-                // 
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = pageNum,

@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Assignment_Amazon.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Assignment_Amazon.Models
@@ -8,6 +12,19 @@ namespace Assignment_Amazon.Models
     public class Cart
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
+
+        public static Cart GetCart(IServiceProvider services)
+        {
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
+            .HttpContext.Session;
+            Cart cart = session?.GetJson<Cart>("Cart")
+            ?? new Cart();
+            cart.Session = session;
+            return cart;
+        }
+
+        [JsonIgnore]
+        public ISession Session { get; set; }
         public void AddBook(Book book, int quantity)
         {
             CartLine line = Lines

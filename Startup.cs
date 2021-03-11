@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Assignment_Amazon.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Assignment_Amazon
 {
@@ -40,6 +41,9 @@ namespace Assignment_Amazon
             // makes the info stick in cart
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Cart>(s => Cart.GetCart(s));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
