@@ -9,10 +9,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Assignment_Amazon.Pages
 {
-    public class AddToCartModel : PageModel
+    public class CartModel : PageModel
     {
         private AssignmentAmazonRepository repository;
-        public AddToCartModel(AssignmentAmazonRepository repo)
+        public CartModel(AssignmentAmazonRepository repo)
         {
             repository = repo;
         }
@@ -35,7 +35,13 @@ namespace Assignment_Amazon.Pages
 
             HttpContext.Session.SetJson("cart", Cart);
 
-            return RedirectToPage(new { returnUrl = returnurl });
+            return RedirectToPage(new { ReturnUrl = returnurl });
+        }
+
+        public IActionResult OnRemoveBook(long bookId, string returnUrl)
+        {
+            Cart.RemoveBook(Cart.Lines.First(b => b.Book.BookId == bookId).Book);
+            return RedirectToPage(new { ReturnUrl = returnUrl });
         }
     }
 }

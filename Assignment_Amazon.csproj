@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\AddToCart.cshtml" />
+    <Content Remove="Pages\Cart.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,15 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\AddToCart.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\AddToCart.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\AddToCart.cshtml" />
+    <None Include="Pages\Cart.cshtml" />
   </ItemGroup>
 
 </Project>
