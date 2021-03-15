@@ -18,7 +18,7 @@ namespace Assignment_Amazon.Models
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?
             .HttpContext.Session;
             Cart cart = session?.GetJson<Cart>("Cart")
-            ?? new Cart();
+            ?? new SessionCart();
             cart.Session = session;
             return cart;
         }
